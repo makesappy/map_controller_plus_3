@@ -8,7 +8,7 @@ import 'package:geopoint/geopoint.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../map_controller_plus.dart';
+import '../map_controller_plus_3.dart';
 import 'exceptions.dart';
 import 'state/lines.dart';
 import 'state/map.dart';
@@ -49,7 +49,7 @@ class StatefulMapController {
       customTileLayer: customTileLayer,
       notify: notify,
     );
-    mapController.onReady.then((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       // fire the map is ready callback
       if (!_readyCompleter.isCompleted) {
         _readyCompleter.complete();
@@ -67,7 +67,7 @@ class StatefulMapController {
   TileLayerType tileLayerType;
 
   /// A custom tile layer options
-  TileLayerOptions? customTileLayer;
+  TileLayer? customTileLayer;
 
   /// Verbosity level
   final bool verbose;
@@ -185,7 +185,7 @@ class StatefulMapController {
   Map<String, Polygon> get namedPolygons => _polygonsState.namedPolygons;
 
   /// The current map tile layer
-  TileLayerOptions? get tileLayer => _tileLayerState.tileLayer;
+  TileLayer? get tileLayer => _tileLayerState.tileLayer;
 
   /// Zoom in one level
   void zoomIn() => _mapState.zoomIn();

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:map_controller_plus/map_controller_plus.dart';
+import 'package:map_controller_plus_3/map_controller_plus_3.dart';
 
 class Place {
   Place(this.name, this.point);
@@ -63,9 +63,9 @@ class _MarkersPageState extends State<MarkersPage> {
             center: LatLng(48.853831, 2.348722),
             zoom: 11.0,
           ),
-          layers: [
+          children: [
             statefulMapController.tileLayer!,
-            MarkerLayerOptions(
+            MarkerLayer(
               markers: statefulMapController.markers,
             ),
           ],

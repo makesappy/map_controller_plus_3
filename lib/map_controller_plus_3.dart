@@ -1,4 +1,4 @@
-library map_controller_plus;
+library map_controller_plus_3;
 
 export 'src/controller.dart';
 export 'src/models.dart';

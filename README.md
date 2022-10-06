@@ -1,8 +1,8 @@
-# Map Controller Plus
+# Map Controller Plus v3.0.0
 
-Stateful map controller for Flutter Map. Manage markers, lines and polygons.
+Stateful map controller for Flutter Map v3.0.0. Manage markers, lines and polygons.
 
-**This is a fork from [synw's map_controller package](https://pub.dev/packages/map_controller) made because the project has been abandoned. This new and improved version supports the latest version of the [flutter_map](https://pub.dev/packages/flutter_map) package. If you need a feature or a fix you can [open an issue on the forked repository](https://github.com/TesteurManiak/map_controller/issues).**
+**This is a fork from [synw's map_controller package](https://pub.dev/packages/map_controller_plus) made because the project has been abandoned. This new and improved version supports the latest version of the [flutter_map](https://pub.dev/packages/flutter_map) package. If you need a feature or a fix you can [open an issue on the forked repository](https://github.com/makesappy/map_controller_plus_3/issues).**
 
 ## Usage
 
@@ -49,9 +49,9 @@ class _MapPageState extends State<MapPage> {
                   mapController: mapController,
                   options: MapOptions(center: LatLng(48.853831, 2.348722), zoom: 11.0),
                   layers: [
-                     MarkerLayerOptions(markers: statefulMapController.markers),
-                     PolylineLayerOptions(polylines: statefulMapController.lines),
-                     PolygonLayerOptions(polygons: statefulMapController.polygons),
+                     MarkerLayer(markers: statefulMapController.markers),
+                     PolylineLayer(polylines: statefulMapController.lines),
+                     PolygonLayer(polygons: statefulMapController.polygons),
                   ],
                ),
             // ...
@@ -205,7 +205,7 @@ FlutterMap(
    layers: [
       // Use the map controller's tile layer
       statefulMapController.tileLayer,
-      MarkerLayerOptions(markers: statefulMapController.markers),
+      MarkerLayer(markers: statefulMapController.markers),
       
       // ...
    ],
@@ -240,7 +240,7 @@ Stack(
          ),
          layers: [
             statefulMapController.tileLayer,
-            MarkerLayerOptions(markers: statefulMapController.markers),
+            MarkerLayer(markers: statefulMapController.markers),
          ],
       ),
       Positioned(
